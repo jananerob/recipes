@@ -1,0 +1,10 @@
+<h1>Pages#home</h1>
+<p>Finance tracker</p>
+
+<%= current_user.inspect %>
+<% if user_signed_in? %>
+  <%= button_to 'Log out', destroy_user_session_path, method: :delete %>
+<% else %>
+  <%= link_to 'Login', new_user_session_path %>
+  <%= link_to 'Register', new_user_registration_path %>
+<% end %>
