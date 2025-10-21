@@ -29,4 +29,17 @@
     <%= recipe.calories %>
   </p>
 
+  <div>
+    <p><strong>Tags</strong></p>
+    <% if recipe.tags.any? %>
+      <p>
+        <% recipe.tags.each do |tag| %>
+          <span class="recipe-tag">
+            <%= tag.name %>
+          </span>
+        <% end %>
+      </p>
+    <% end %>
+  </div>
+
 </div>

@@ -42,6 +42,15 @@
   </div>
 
   <div>
+    <%= form.label :tag_ids, "Select Tags", style: "display: block" %>
+    <%= form.select :tag_ids, 
+                   options_from_collection_for_select(Tag.all, :id, :name, @recipe.tag_ids),
+                   { prompt: "Select one or more tags" },
+                   { multiple: true, style: "display: block;" } 
+  %>
+  </div>
+
+  <div>
     <%= form.submit %>
   </div>
 <% end %>
